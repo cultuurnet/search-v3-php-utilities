@@ -307,8 +307,9 @@ class SearchPreprocessor
                 break;
         }
 
-        $calendarPlainTextFormatter = new CalendarPlainTextFormatter($locale);
-        return $calendarPlainTextFormatter->format($event, 'md');
+        $formatter = new CalendarHTMLFormatter($locale);
+
+        return $formatter->format($event, 'md');
     }
 
     /**
@@ -333,14 +334,9 @@ class SearchPreprocessor
                 break;
         }
 
-        $calendarPlainTextFormatter = new CalendarPlainTextFormatter($locale);
-        $calendarHTMLFormatter = new CalendarHTMLFormatter($locale);
+        $formatter = new CalendarHTMLFormatter($locale);
 
-        if ($event->getCalendarType() === Offer::CALENDAR_TYPE_MULTIPLE) {
-            return $calendarHTMLFormatter->format($event, 'lg');
-        } else {
-            return $calendarPlainTextFormatter->format($event, 'lg');
-        }
+        return $formatter->format($event, 'lg');
     }
 
     /**
