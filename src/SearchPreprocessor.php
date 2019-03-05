@@ -253,6 +253,16 @@ class SearchPreprocessor
             $variables['links'] = $contactPoint->getUrls();
         }
 
+        $variables['performers'] = NULL;
+        if (!empty($event->getPerformers())) {
+          $performerLabels = [];
+          foreach($event->getPerformers() as $performer) {
+            $performerLabels[] = $performer->getName();
+          }
+
+          $variables['performers'] = implode(', ', $performerLabels);
+        }
+
         return $variables;
     }
 
