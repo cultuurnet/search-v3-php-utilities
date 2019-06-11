@@ -239,7 +239,7 @@ class SearchPreprocessor
             }
             if ($bookingInfo->getAvailabilityEnds()) {
                 $variables['booking_info']['end_date'] =
-                    $dateFormatter->format($bookingInfo->getAvailabilityStarts());
+                    $dateFormatter->format($bookingInfo->getAvailabilityEnds());
             }
         }
 
