@@ -19,6 +19,6 @@
   "require": {
     "php": "^7.1",
     "ext-intl": "*",
-    "cultuurnet/calendar-summary-v3": "dev-master"
+    "cultuurnet/calendar-summary-v3": "^3.0"
   }
 }
